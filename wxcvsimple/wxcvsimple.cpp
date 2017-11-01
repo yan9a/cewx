@@ -1,3 +1,9 @@
+//File: wxcvsimple.cpp
+//Description: A simple example to use OpenCV with wxWidgets
+//Author: Yan Naing Aye
+//Date: 2017 November 01
+//MIT License - Copyright (c) 2017 Yan Naing Aye
+
 #include <wx/wx.h>
 #include <opencv2/opencv.hpp>
 #include "util.h"

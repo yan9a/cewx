@@ -1,3 +1,7 @@
+//File: util.h
+//Description: Functions to convert wxImage and OpenCV Mat
+
+
 //https://stackoverflow.com/questions/2210937/opencv-with-other-gui-like-qt-or-wxwidgets-on-win32-vc
 #include <wx/wx.h>
 #include <opencv2/opencv.hpp>
