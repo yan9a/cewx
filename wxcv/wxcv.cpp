@@ -13,7 +13,7 @@ Simple::Simple(const wxString& title)
        : wxFrame(NULL, wxID_ANY, title, wxDefaultPosition, wxSize(250, 150))
 {
   Centre();
-  Mat img=imread("grove.jpg",CV_LOAD_IMAGE_COLOR);
+  Mat img=imread("./grove.jpg",CV_LOAD_IMAGE_COLOR);
   namedWindow("Img",CV_WINDOW_AUTOSIZE);
   imshow("Img",img);
 }

@@ -229,11 +229,22 @@ void MyFrame::OnSend(wxCommandEvent& WXUNUSED(event))
 	wxCharBuffer buffer = str.ToUTF8();
 	size_t txn = str.length();
 
+	IPaddress addrLocal;
+	addrLocal.Hostname("localhost");
+    wxDatagramSocket sock2tx(addrLocal);
+    if ( !sock2tx.IsOk() )
+    {
+		txtRx->AppendText(wxT("Failed to create UDP socket.\n"));
+        return;
+    }
+	txtRx->AppendText(wxString::Format(wxT("Created socket at %s:%u \n"),
+		addrLocal.IPAddress(), addrLocal.Service()));
+
 	IPaddress raddr;
 	raddr.Hostname("localhost");
     //raddr.Hostname("192.168.2.71");
 	raddr.Service(3001);
-	if (sock->SendTo(raddr, buffer.data(), txn).LastCount() != txn)
+	if (sock2tx->SendTo(raddr, buffer.data(), txn).LastCount() != txn)
 	{
 		txtRx->AppendText(wxT("Write error.\n"));
 		return;

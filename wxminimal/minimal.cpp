@@ -37,7 +37,7 @@
 // the application icon (under Windows and OS/2 it is in resources and even
 // though we could still include the XPM here it would be unused)
 #ifndef wxHAS_IMAGES_IN_RESOURCES
-    #include "../sample.xpm"
+    #include "./sample.xpm"
 #endif
 
 // ----------------------------------------------------------------------------

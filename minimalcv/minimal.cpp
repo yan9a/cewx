@@ -22,10 +22,10 @@ MyFrame::MyFrame(const wxString& title)
 	: wxFrame(NULL, wxID_ANY, title, wxDefaultPosition, wxSize(512, 600))
 {
 	Centre();
-	thiri = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("C:/opencv/thiri.png"), wxBITMAP_TYPE_PNG), wxPoint(256, 0), wxSize(512,512));
+	thiri = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./thiri.png"), wxBITMAP_TYPE_PNG), wxPoint(256, 0), wxSize(512,512));
 
 	//From opencv to wx
-	Mat imcv1 = imread("C:/opencv/thiri.png",IMREAD_UNCHANGED);
+	Mat imcv1 = imread("./thiri.png",IMREAD_UNCHANGED);
 	string str = "Channels:" + to_string(imcv1.channels());
 	putText(imcv1, str, Point(100, 100), FONT_HERSHEY_PLAIN, 4.0, CV_RGB(128, 0, 128), 4.0);
 	wxBitmap imwx1 = wx_from_mat(imcv1);
