@@ -230,7 +230,7 @@ void MyFrame::OnSend(wxCommandEvent& WXUNUSED(event))
 	size_t txn = str.length();
 
 	IPaddress addrLocal;
-	addrLocal.Hostname("localhost");
+	addrLocal.AnyAddress();
     wxDatagramSocket sock2tx(addrLocal);
     if ( !sock2tx.IsOk() )
     {
@@ -242,9 +242,9 @@ void MyFrame::OnSend(wxCommandEvent& WXUNUSED(event))
 
 	IPaddress raddr;
 	raddr.Hostname("localhost");
-    //raddr.Hostname("192.168.2.71");
+    //raddr.Hostname("192.168.7.2");
 	raddr.Service(3001);
-	if (sock2tx->SendTo(raddr, buffer.data(), txn).LastCount() != txn)
+	if (sock2tx.SendTo(raddr, buffer.data(), txn).LastCount() != txn)
 	{
 		txtRx->AppendText(wxT("Write error.\n"));
 		return;
