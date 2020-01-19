@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.0)
+project (mysqltest)
+set(CMAKE_CXX_STANDARD 11)
+set(MYSQL_LIBS mysqlcppconn8.so )
+link_directories(/usr/local/mysql/connector-c++-8.0/lib64)
+include_directories(/usr/local/mysql/connector-c++-8.0/include)
+add_executable(${PROJECT_NAME} mysqltest.cpp)
+target_link_libraries(${PROJECT_NAME} ${MYSQL_LIBS})
