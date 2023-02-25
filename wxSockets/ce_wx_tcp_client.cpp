@@ -194,7 +194,7 @@ void MyFrame::OnSend(wxCommandEvent& WXUNUSED(event))
 {
 	wxString str = txtSend->GetValue();
 	wxCharBuffer buffer = str.ToUTF8();
-	size_t txn = str.length();
+	size_t txn = buffer.length();//for non-ASCII chars, having more than one byte per char
 
 	unsigned char len;
 	len = txn;
