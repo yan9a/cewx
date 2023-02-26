@@ -43,5 +43,6 @@ x64/
 *.vcxproj.user
 Testing/
 
+# Codeblock generated files
 *.layout
 *.depends
